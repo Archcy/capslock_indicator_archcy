@@ -9,4 +9,11 @@ I use [system-hook](https://github.com/kristian/system-hook) in order to listen 
 
 you can import [system-hook](https://github.com/kristian/system-hook) and build it by yourself.
 
+## usage info
+* run the jar file,an indicator will show at your button of screen.
+* drag the indicator to move it.
+* right click to exit.
+
 if you have any suggestions,please submit a issue.
+
+
