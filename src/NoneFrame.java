@@ -5,9 +5,10 @@ import javax.swing.*;
 public class NoneFrame extends JWindow {
 
 
-    private int width=50,height=50,border=0; //button control
+    private int width=50,height=50,border=0; // size control
     Point origin = new Point();
-    Dimension scsize = Toolkit.getDefaultToolkit().getScreenSize();
+    GraphicsEnvironment ge=GraphicsEnvironment.getLocalGraphicsEnvironment();
+    Rectangle scsize=ge.getMaximumWindowBounds(); //use .getMaximumWindowBounds to avid the window float on task bar
     private float opca=0.5f;
     public NoneFrame() {
         this.setSize(width, height);
@@ -25,7 +26,7 @@ public class NoneFrame extends JWindow {
             public void mouseClicked(MouseEvent e) {
                 if(e.getModifiers()==4)
                 {
-                    System.exit(0);
+                    System.exit(0); //right click to exit
                 }
             }
         });
@@ -33,7 +34,7 @@ public class NoneFrame extends JWindow {
 
             public void mouseDragged(MouseEvent e) {
                 Point p = getLocation();
-                setLocation(p.x+e.getX()-origin.x,p.y+e.getY()-origin.y);
+                setLocation(p.x+e.getX()-origin.x,p.y+e.getY()-origin.y);//location = mouse moved-origin
             }
         });
     }
